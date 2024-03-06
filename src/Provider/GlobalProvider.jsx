@@ -19,6 +19,7 @@ const googleProvider = new GoogleAuthProvider();
 const githubProvider = new GithubAuthProvider();
 const GlobalContext = createContext();
 
+// eslint-disable-next-line react/prop-types
 export const GlobalProvider = ({ children }) => {
 	const [user, setUser] = useState(null);
 	const [loading, setLoading] = useState(true);
@@ -101,8 +102,4 @@ export const GlobalProvider = ({ children }) => {
 
 export const GlobalSate = () => {
 	return useContext(GlobalContext);
-};
-GlobalProvider.propTypes = {
-    // eslint-disable-next-line no-undef
-    children: propTypes.node.isRequired
 };
